@@ -1,0 +1,28 @@
+{
+  "name": "waterway",
+  "version": "0.1.0",
+  "description": "A Node.js microservice communication platform",
+  "main": "waterway.js",
+  "scripts": {
+    "test": "make test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:HeilHydra/waterway.git"
+  },
+  "keywords": [
+    "microservice",
+    "communication",
+    "messaging"
+  ],
+  "author": "Oliver Woodings",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/HeilHydra/waterway/issues"
+  },
+  "homepage": "https://github.com/HeilHydra/waterway",
+  "dependencies": {
+    "socket.io": "^1.3.5",
+    "socket.io-client": "^1.3.5"
+  }
+}
