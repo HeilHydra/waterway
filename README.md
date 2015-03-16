@@ -36,8 +36,14 @@ Requests are events that receive a response.
 * WaterwayRequest().send();
 
 
-### Server
 
-#### Waterway.server(conf);
+subscribe stream:*
+publish stream:*
 
-#### WaterwayServer.start();
+subscribe event:*
+publish event:*
+
+publish request:*
+subscribe request:*
+publish respond:*
+subscribe respond:*

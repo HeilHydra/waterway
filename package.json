@@ -2,7 +2,7 @@
   "name": "waterway",
   "version": "0.1.0",
   "description": "A Node.js microservice communication platform",
-  "main": "waterway.js",
+  "main": "lib/Waterway",
   "scripts": {
     "test": "make test"
   },
@@ -22,7 +22,11 @@
   },
   "homepage": "https://github.com/HeilHydra/waterway",
   "dependencies": {
-    "socket.io": "^1.3.5",
-    "socket.io-client": "^1.3.5"
+    "redis-pub-sub": "0.0.1",
+    "lodash-node": "^3.5.0",
+    "node-redis-pubsub": "^0.3.0"
+  },
+  "devDependencies": {
+    "node-redis-pubsub": "^0.3.0"
   }
 }
