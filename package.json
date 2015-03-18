@@ -22,11 +22,9 @@
   },
   "homepage": "https://github.com/HeilHydra/waterway",
   "dependencies": {
-    "redis-pub-sub": "0.0.1",
+    "guid": "0.0.12",
     "lodash-node": "^3.5.0",
-    "node-redis-pubsub": "^0.3.0"
-  },
-  "devDependencies": {
-    "node-redis-pubsub": "^0.3.0"
+    "node-redis-pubsub": "git://github.com/oliverwoodings/node-redis-pubsub.git",
+    "when": "^3.7.2"
   }
 }
