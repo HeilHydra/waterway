@@ -1,3 +1,5 @@
+/*jshint nonew: false */
+
 var expect = require("chai").expect;
 var sinon = require("sinon");
 var WaterwayStream = require("../lib/WaterwayStream");
@@ -18,7 +20,7 @@ describe("WaterwayStream", function () {
 
   it("should throw an error if key has wildcards", function () {
     var fn = function () {
-      var stream = new WaterwayStream(null, ["test", "*"]);
+      new WaterwayStream(null, ["test", "*"]);
     };
     expect(fn).to.throw(/Wildcards found in/);
   });
