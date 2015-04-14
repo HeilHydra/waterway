@@ -3,9 +3,9 @@ var sinon = require("sinon");
 var when = require("when");
 var _ = require("lodash-node");
 var guid = require("guid");
-var WaterwayRequest = require("../lib/WaterwayRequest");
+var Request = require("../lib/Request");
 
-describe("WaterwayRequest", function () {
+describe("Request", function () {
   var request, sandbox, connection;
   beforeEach(function () {
     sandbox = sinon.sandbox.create();
@@ -14,7 +14,7 @@ describe("WaterwayRequest", function () {
       on: sandbox.spy(),
       off: sandbox.spy()
     };
-    request = new WaterwayRequest(connection, ["foo", "bar"]);
+    request = new Request(connection, ["foo", "bar"]);
   });
   afterEach(function () {
     sandbox.reset();
@@ -27,7 +27,7 @@ describe("WaterwayRequest", function () {
 
     it("should throw an error if key has wildcards", function () {
       var fn = function () {
-        var request = new WaterwayRequest(null, ["test", "*"]);
+        var request = new Request(null, ["test", "*"]);
         request.send();
       };
       expect(fn).to.throw(/Wildcards found in/);

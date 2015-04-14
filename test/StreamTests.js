@@ -2,9 +2,9 @@
 
 var expect = require("chai").expect;
 var sinon = require("sinon");
-var WaterwayStream = require("../lib/WaterwayStream");
+var Stream = require("../lib/Stream");
 
-describe("WaterwayStream", function () {
+describe("Stream", function () {
   var stream, sandbox, connection;
   beforeEach(function () {
     sandbox = sinon.sandbox.create();
@@ -12,7 +12,7 @@ describe("WaterwayStream", function () {
       emit: sandbox.spy(),
       on: sandbox.spy()
     };
-    stream = new WaterwayStream(connection, ["foo", "bar"]);
+    stream = new Stream(connection, ["foo", "bar"]);
   });
   afterEach(function () {
     sandbox.reset();
@@ -20,7 +20,7 @@ describe("WaterwayStream", function () {
 
   it("should throw an error if key has wildcards", function () {
     var fn = function () {
-      new WaterwayStream(null, ["test", "*"]);
+      new Stream(null, ["test", "*"]);
     };
     expect(fn).to.throw(/Wildcards found in/);
   });

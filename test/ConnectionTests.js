@@ -1,13 +1,13 @@
 var expect = require("chai").expect;
 var sinon = require("sinon");
 var NRP = require("node-redis-pubsub");
-var WaterwayConnection = require("../lib/WaterwayConnection");
+var Connection = require("../lib/Connection");
 
-describe("WaterwayConnection", function () {
+describe("Connection", function () {
 
   var connection;
   beforeEach(function () {
-    connection = new WaterwayConnection();
+    connection = new Connection();
   });
   afterEach(function () {
     connection.quit();

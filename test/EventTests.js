@@ -1,8 +1,8 @@
 var expect = require("chai").expect;
 var sinon = require("sinon");
-var WaterwayEvent = require("../lib/WaterwayEvent");
+var Event = require("../lib/Event");
 
-describe("WaterwayEvent", function () {
+describe("Event", function () {
 
   var event, sandbox, connection;
   beforeEach(function () {
@@ -12,7 +12,7 @@ describe("WaterwayEvent", function () {
       on: sandbox.spy(),
       off: sandbox.spy()
     };
-    event = new WaterwayEvent(connection, ["foo", "bar"]);
+    event = new Event(connection, ["foo", "bar"]);
   });
   afterEach(function () {
     sandbox.reset();
@@ -21,7 +21,7 @@ describe("WaterwayEvent", function () {
   describe("#emit()", function () {
     it("should throw an error if key has wildcards", function () {
       var fn = function () {
-        var event = new WaterwayEvent(null, ["test", "*"]);
+        var event = new Event(null, ["test", "*"]);
         event.emit();
       };
       expect(fn).to.throw(/Wildcards found in/);
